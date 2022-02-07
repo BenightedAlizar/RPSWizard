@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     public float maximumSpeed;
 
 
-    private GameObject gob; // we will place this object at the mouse position
-
 
     private void Awake()
     {
@@ -25,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gob = new GameObject();
+
     }
 
     // Update is called once per frame
@@ -35,10 +33,24 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maximumSpeed);
         }
+        FaceTheCursor();
 
+        movementY = Input.GetAxis("Vertical");
+        movementX = Input.GetAxis("Horizontal");
+    }
+
+    private void FixedUpdate()
+    {
+        rb.AddRelativeForce(Vector3.forward * movementY * movementSpeed);
+        rb.AddRelativeForce(Vector3.right * movementX * movementSpeed);
+    }
+
+    void FaceTheCursor()
+    {
         //Uses camera to determine mouse position on a plane
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+        //plane for ray to hit
         Plane ground = new Plane(Vector3.up, Vector3.zero);
         float distance;
         if (ground.Raycast(ray, out distance))
@@ -48,13 +60,7 @@ public class PlayerMovement : MonoBehaviour
             float rotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, rotation, 0);
         }
-        /////
-
-
-        movementY = Input.GetAxis("Vertical");
-        rb.AddRelativeForce(Vector3.forward * movementY * movementSpeed);
-
-        
 
     }
+    
 }
