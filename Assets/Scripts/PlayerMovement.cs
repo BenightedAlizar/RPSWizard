@@ -4,15 +4,57 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Rigidbody rb;
+
+
+    float movementY;
+    float movementX;
+    public float movementSpeed;
+    public float maximumSpeed;
+
+
+    private GameObject gob; // we will place this object at the mouse position
+
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gob = new GameObject();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (rb.velocity.magnitude > maximumSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maximumSpeed);
+        }
+
+        //Uses camera to determine mouse position on a plane
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        Plane ground = new Plane(Vector3.up, Vector3.zero);
+        float distance;
+        if (ground.Raycast(ray, out distance))
+        {
+            Vector3 target = ray.GetPoint(distance);
+            Vector3 direction = target - transform.position;
+            float rotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, rotation, 0);
+        }
+        /////
+
+
+        movementY = Input.GetAxis("Vertical");
+        rb.AddRelativeForce(Vector3.forward * movementY * movementSpeed);
+
         
+
     }
 }
