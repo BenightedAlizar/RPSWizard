@@ -7,6 +7,10 @@ TagManager:
   - RockAttack
   - PaperAttack
   - ScissorsAttack
+  - RockEnemy
+  - PaperEnemy
+  - ScissorsEnemy
+  - Arena
   layers:
   - Default
   - TransparentFX

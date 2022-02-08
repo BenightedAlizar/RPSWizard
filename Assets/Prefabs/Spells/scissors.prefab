@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 5781554328144688247}
   - component: {fileID: 7463571321748765650}
   - component: {fileID: 4645209969693576984}
-  m_Layer: 0
+  - component: {fileID: -5856500182043448496}
+  - component: {fileID: 4589748674525226064}
+  - component: {fileID: 8223359658869478658}
+  m_Layer: 7
   m_Name: scissors
-  m_TagString: Untagged
+  m_TagString: ScissorsAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +84,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &-5856500182043448496
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590989102552706765}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &4589748674525226064
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590989102552706765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5996548
+  m_Center: {x: -2.18818e-40, y: 0, z: 0.29784003}
+--- !u!114 &8223359658869478658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590989102552706765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e39a3dbfd14b22489a71522e1b03db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
