@@ -304,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -5.337, y: -1.3257}
+  m_SizeDelta: {x: 352.526, y: 88.1315}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359695814
 MonoBehaviour:
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 462618787}
   m_Layer: 0
   m_Name: Arena
-  m_TagString: Untagged
+  m_TagString: Arena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -760,7 +760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1547544882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -778,8 +778,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 317}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547544883
 MonoBehaviour:
@@ -1107,6 +1107,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6123020105888103490, guid: 96b686059a4bdb443a4940101d56b8b5, type: 3}
+      propertyPath: newWaveBanner
+      value: 
+      objectReference: {fileID: 1547544881}
+    - target: {fileID: 6123020105888103490, guid: 96b686059a4bdb443a4940101d56b8b5, type: 3}
       propertyPath: spawners.Array.data[0]
       value: 
       objectReference: {fileID: 498515472}
@@ -1227,5 +1231,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7492755332810523301, guid: 6246c0adb52667848aed56703c4741df, type: 3}
+      propertyPath: rockAttack
+      value: 
+      objectReference: {fileID: 2109585151754401769, guid: f369af01891a2e84c974b9c5354aad33, type: 3}
+    - target: {fileID: 7492755332810523301, guid: 6246c0adb52667848aed56703c4741df, type: 3}
+      propertyPath: paperAttack
+      value: 
+      objectReference: {fileID: 4876320778751399156, guid: ecbacbbd8b550cd44b2bc7a37cf8a331, type: 3}
+    - target: {fileID: 7492755332810523301, guid: 6246c0adb52667848aed56703c4741df, type: 3}
+      propertyPath: scissorsAttack
+      value: 
+      objectReference: {fileID: 6590989102552706765, guid: b0ab256d9dcc71b43b890f51694e46fb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6246c0adb52667848aed56703c4741df, type: 3}

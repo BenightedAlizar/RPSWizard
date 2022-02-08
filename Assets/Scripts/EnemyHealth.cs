@@ -13,6 +13,18 @@ public class EnemyHealth : MonoBehaviour
 
     public Weakness weakness;
 
+    public EnemyMovement movementScript;
+
+    public float sameTypeKnockback; //knockback from hitting this with the same element (rock vs rock, etc.)
+
+    Rigidbody rb;
+
+
+    private void Awake()
+    {
+        rb = FindObjectOfType<Rigidbody>();
+        movementScript = FindObjectOfType<EnemyMovement>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +35,11 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
+        if (transform.position.y < -5) //fell off the arena!
+        {
+            movementScript.alive = false;
+            Destroy(gameObject);
+        }   
     }
 
 
@@ -42,6 +53,12 @@ public class EnemyHealth : MonoBehaviour
                 {
                     Invoke("DestroyThis", 0.05f);
                 }
+                else if (gameObject.tag == "RockEnemy")
+                {
+                    Vector3 moveDirection = transform.position -collision.transform.position;
+                    rb.AddForce(moveDirection.normalized * sameTypeKnockback);
+
+                }
                 break;
             case "PaperAttack":
                 Destroy(collision.gameObject);
@@ -49,12 +66,24 @@ public class EnemyHealth : MonoBehaviour
                 {
                     Invoke("DestroyThis", 0.05f);
                 }
+                else if (gameObject.tag == "PaperEnemy")
+                {
+                    Vector3 moveDirection = transform.position - collision.transform.position;
+                    rb.AddForce(moveDirection.normalized * sameTypeKnockback);
+
+                }
                 break;
             case "ScissorsAttack":
                 Destroy(collision.gameObject);
                 if (weakness == Weakness.Scissors)
                 {
                     Invoke("DestroyThis", 0.05f);
+                }
+                else if (gameObject.tag == "ScissorsEnemy")
+                {
+                    Vector3 moveDirection = transform.position - collision.transform.position;
+                    rb.AddForce(moveDirection.normalized * sameTypeKnockback);
+
                 }
                 break;
             default:

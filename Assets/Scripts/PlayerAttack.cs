@@ -66,9 +66,9 @@ public class PlayerAttack : MonoBehaviour
         {
             chosenSpell = ChosenSpell.Paper;
         }
-        else if (Input.GetButtonDown("Paper"))
+        else if (Input.GetButtonDown("Scissors"))
         {
-            chosenSpell = ChosenSpell.Paper;
+            chosenSpell = ChosenSpell.Scissors;
         }
 
     }

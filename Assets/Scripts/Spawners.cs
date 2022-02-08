@@ -8,6 +8,7 @@ public class Spawners : MonoBehaviour
     public List<GameObject> spawnables; //Enemies that this can spawn
     public List<Transform> spawners; // Enemies spawn at these
 
+    public GameObject newWaveBanner;
 
 
     public List<GameObject> currentEnemies; //Enemies currently on board
@@ -38,8 +39,14 @@ public class Spawners : MonoBehaviour
                 //Next wave incoming sound/graphic here?!
 
 
+                if (currentWave != 1)
+                {
+                    newWaveBanner.SetActive(true);
+                }
+
                 //Delay before next wave!
                 yield return new WaitForSecondsRealtime(1);
+                newWaveBanner.SetActive(false);
 
                 int enemiesToSpawn = currentWave * 2;
                 for (int i = 0; i < enemiesToSpawn; i++)
