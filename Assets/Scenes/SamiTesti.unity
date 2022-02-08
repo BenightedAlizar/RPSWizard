@@ -1126,6 +1126,10 @@ PrefabInstance:
       propertyPath: spawners.Array.data[3]
       value: 
       objectReference: {fileID: 98788596}
+    - target: {fileID: 6123020105888103490, guid: 96b686059a4bdb443a4940101d56b8b5, type: 3}
+      propertyPath: spawnables.Array.data[0]
+      value: 
+      objectReference: {fileID: 5504649042125335253, guid: 51b7a6ae99ae4d940b4be36fcf5c8bf6, type: 3}
     - target: {fileID: 6123020105888103491, guid: 96b686059a4bdb443a4940101d56b8b5, type: 3}
       propertyPath: m_Name
       value: SpawnerController
