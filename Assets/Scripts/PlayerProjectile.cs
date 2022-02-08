@@ -15,23 +15,14 @@ public class PlayerProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void OnBecameInvisible()
     {
-        
+        Destroy(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
 
     private void FixedUpdate()
     {
         rb.AddRelativeForce(Vector3.forward * speed);
     }
-
 }

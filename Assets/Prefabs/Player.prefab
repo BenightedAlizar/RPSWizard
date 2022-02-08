@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55a210b0222ac74bbce154359fb6056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack1: {fileID: 0}
-  attack2: {fileID: 0}
-  attack3: {fileID: 0}
-  attackCooldown: 0.5
+  rockAttack: {fileID: 357019359197511439, guid: 73cad11a7dc2580428b1ff86eb23ee7e, type: 3}
+  paperAttack: {fileID: 357019359197511439, guid: 972851c8d9e330e4a9bf369c2f2c30bb, type: 3}
+  scissorsAttack: {fileID: 357019359197511439, guid: b7232e4ef76f77f4d99fec938c2b3321, type: 3}
+  attackCooldown: 0.8
+  chosenSpell: 0

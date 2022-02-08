@@ -6,7 +6,7 @@ TagManager:
   tags:
   - RockAttack
   - PaperAttack
-  - ScissorsButton
+  - ScissorsAttack
   layers:
   - Default
   - TransparentFX

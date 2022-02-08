@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53af0908095f5ad4b9a6b0797a83d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 30
+  movementSpeed: 15
   turnSpeed: 5
   player: {fileID: 0}
 --- !u!114 &-4946673554837220039
@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2febe8e29b73d74096b7aa9cb355701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weakness: 0

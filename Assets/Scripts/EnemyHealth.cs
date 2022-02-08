@@ -26,6 +26,10 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 
 
     private void OnCollisionEnter(Collision collision)
