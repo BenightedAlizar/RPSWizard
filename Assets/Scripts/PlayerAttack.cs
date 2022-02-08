@@ -30,8 +30,10 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButton("Fire1") && cooldownTimer <= 0)
         {
             cooldownTimer = attackCooldown;
-            Instantiate(attack1, transform.position, Quaternion.identity);
+            Instantiate(attack1, transform.position + transform.forward * 2,  transform.rotation);
         }
         
     }
+
+
 }

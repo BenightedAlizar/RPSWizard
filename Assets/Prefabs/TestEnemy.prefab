@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6573947950039972396}
   - component: {fileID: 255245139800256641}
   - component: {fileID: 489139133898040794}
+  - component: {fileID: -4946673554837220039}
   m_Layer: 8
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -128,3 +129,15 @@ MonoBehaviour:
   movementSpeed: 30
   turnSpeed: 5
   player: {fileID: 0}
+--- !u!114 &-4946673554837220039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931916165048997875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2febe8e29b73d74096b7aa9cb355701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
