@@ -9,12 +9,20 @@ public class Spawners : MonoBehaviour
     public List<Transform> spawners; // Enemies spawn at these
 
     public GameObject newWaveBanner;
+    public GameManager gameManager;
 
 
     public List<GameObject> currentEnemies; //Enemies currently on board
 
     public int currentWave = 0;
 
+    WaveCounter waveCounter;
+
+    private void Awake()
+    {
+        waveCounter = FindObjectOfType<WaveCounter>();
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +33,9 @@ public class Spawners : MonoBehaviour
     IEnumerator SpawnerGameplayLoop()
     {
 
-        while (true)
+        while (gameManager.playerIsAlive)
         {
+
             yield return new WaitForSecondsRealtime(1);
 
             NullCheck(); //Check for null spots on list
@@ -36,8 +45,13 @@ public class Spawners : MonoBehaviour
             {
                 currentWave++;
 
+                waveCounter.CountWave(currentWave);
                 //Next wave incoming sound/graphic here?!
 
+                if (gameManager.playerIsAlive == false)
+                {
+                    break;
+                }
 
                 if (currentWave != 1)
                 {
@@ -51,6 +65,10 @@ public class Spawners : MonoBehaviour
                 int enemiesToSpawn = currentWave * 2;
                 for (int i = 0; i < enemiesToSpawn; i++)
                 {
+                    if (gameManager.playerIsAlive == false)
+                    {
+                        break;
+                    }
                     SpawnRandomEnemy();
                     yield return new WaitForSecondsRealtime(0.8f);
                 }

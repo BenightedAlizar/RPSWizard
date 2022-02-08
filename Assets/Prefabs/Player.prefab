@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7198879479809970890}
   - component: {fileID: 7198879479809970891}
   - component: {fileID: 7492755332810523301}
+  - component: {fileID: 5403811233151544629}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 50
   maximumSpeed: 3
+  alive: 1
 --- !u!114 &7492755332810523301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +147,18 @@ MonoBehaviour:
   scissorsAttack: {fileID: 357019359197511439, guid: b7232e4ef76f77f4d99fec938c2b3321, type: 3}
   attackCooldown: 0.8
   chosenSpell: 0
+--- !u!114 &5403811233151544629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198879479809970885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0edf23af57cb82745b0bbeb71ae85b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  alive: 1
+  deathPopup: {fileID: 0}

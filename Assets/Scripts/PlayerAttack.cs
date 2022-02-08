@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject rockAttack;
     public GameObject paperAttack;
     public GameObject scissorsAttack;
+    GameManager gameManager;
 
     public float attackCooldown;
     private float cooldownTimer;
@@ -20,6 +21,13 @@ public class PlayerAttack : MonoBehaviour
 
 
     public ChosenSpell chosenSpell;
+
+
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
         }
 
 
-        if (Input.GetButton("Fire1") && cooldownTimer <= 0)
+        if (Input.GetButton("Fire1") && cooldownTimer <= 0 && gameManager.playerIsAlive)
         {
             cooldownTimer = attackCooldown;
 

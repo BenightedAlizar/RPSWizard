@@ -18,6 +18,12 @@ public class ScoreCounter : MonoBehaviour
     }
 
 
+    private void Start()
+    {
+        scoreText.text = "Score: " + score;
+    }
+
+
     public void AddScore(int addedScore)
     {
         score += addedScore;

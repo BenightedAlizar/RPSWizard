@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     public float maximumSpeed;
 
+    GameManager gameManager;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
 
@@ -29,20 +31,27 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.velocity.magnitude > maximumSpeed)
+        if (gameManager.playerIsAlive)
         {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maximumSpeed);
-        }
-        FaceTheCursor();
+            if (rb.velocity.magnitude > maximumSpeed)
+            {
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, maximumSpeed);
+            }
+            FaceTheCursor();
 
-        movementY = Input.GetAxis("Vertical");
-        movementX = Input.GetAxis("Horizontal");
+            movementY = Input.GetAxis("Vertical");
+            movementX = Input.GetAxis("Horizontal");
+        }
+
     }
 
     private void FixedUpdate()
     {
-        rb.AddRelativeForce(Vector3.forward * movementY * movementSpeed);
-        rb.AddRelativeForce(Vector3.right * movementX * movementSpeed);
+        if (gameManager.playerIsAlive)
+        {
+            rb.AddRelativeForce(Vector3.forward * movementY * movementSpeed);
+            rb.AddRelativeForce(Vector3.right * movementX * movementSpeed);
+        }
     }
 
     void FaceTheCursor()
@@ -62,5 +71,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+
+
     
 }

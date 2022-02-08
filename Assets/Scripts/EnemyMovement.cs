@@ -9,20 +9,35 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody rb;
 
     public Transform player;
+    GameManager gameManager;
 
     public bool alive = true;
-
     public bool falling;
+    public static bool playerAlive = true;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerMovement>().transform;
+        gameManager = FindObjectOfType<GameManager>();
     }
+
+    private void Start()
+    {
+        
+    }
+
+
 
     void Update()
     {
-        if (alive && !falling)
+        if (playerAlive == true && gameManager.playerIsAlive == false)
+        {
+            playerAlive = false;
+        }
+
+
+        if (alive && playerAlive && !falling)
         {
             Vector3 lookPosition = player.position - transform.position;
             Quaternion lookRotation = Quaternion.LookRotation(lookPosition, Vector3.up);
@@ -46,9 +61,13 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
+
+
+
+
     private void FixedUpdate()
     {
-        if (alive && !falling)
+        if (alive && !falling && playerAlive)
         {
             rb.AddRelativeForce(Vector3.forward * movementSpeed);
         }
@@ -57,7 +76,5 @@ public class EnemyMovement : MonoBehaviour
             rb.AddRelativeForce(Vector3.down * 100);
         }
     }
-
-
 
 }

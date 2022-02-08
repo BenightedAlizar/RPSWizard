@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53af0908095f5ad4b9a6b0797a83d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 30
-  turnSpeed: 5
+  movementSpeed: 25
+  turnSpeed: 7
   player: {fileID: 0}
   alive: 1
   falling: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weakness: 1
   movementScript: {fileID: 0}
+  scoreCounter: {fileID: 0}
   sameTypeKnockback: 3000
 --- !u!1001 &4702267101310623803
 PrefabInstance:

@@ -126,10 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53af0908095f5ad4b9a6b0797a83d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 15
+  movementSpeed: 25
   turnSpeed: 5
   player: {fileID: 0}
   alive: 1
+  falling: 0
 --- !u!114 &2243619002150622101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,4 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weakness: 2
   movementScript: {fileID: 0}
+  scoreCounter: {fileID: 0}
   sameTypeKnockback: 1500
