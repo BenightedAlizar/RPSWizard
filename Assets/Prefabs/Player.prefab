@@ -143,4 +143,4 @@ MonoBehaviour:
   attack1: {fileID: 0}
   attack2: {fileID: 0}
   attack3: {fileID: 0}
-  attackCooldown: 1
+  attackCooldown: 0.5
