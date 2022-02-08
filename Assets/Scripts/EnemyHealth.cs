@@ -9,11 +9,10 @@ public class EnemyHealth : MonoBehaviour
     {
         Rock, Paper, Scissors
     }
-
-
     public Weakness weakness;
 
     public EnemyMovement movementScript;
+    public ScoreCounter scoreCounter;
 
     public float sameTypeKnockback; //knockback from hitting this with the same element (rock vs rock, etc.)
 
@@ -24,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
     {
         rb = FindObjectOfType<Rigidbody>();
         movementScript = FindObjectOfType<EnemyMovement>();
+        scoreCounter = FindObjectOfType<ScoreCounter>();
     }
 
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
         if (transform.position.y < -5) //fell off the arena!
         {
             movementScript.alive = false;
-            Destroy(gameObject);
+            Die();
         }   
     }
 
@@ -51,7 +51,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(collision.gameObject);
                 if (weakness == Weakness.Rock)
                 {
-                    Invoke("DestroyThis", 0.05f);
+                    Invoke("Die", 0.05f);
                 }
                 else if (gameObject.tag == "RockEnemy")
                 {
@@ -64,7 +64,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(collision.gameObject);
                 if (weakness == Weakness.Paper)
                 {
-                    Invoke("DestroyThis", 0.05f);
+                    Invoke("Die", 0.05f);
                 }
                 else if (gameObject.tag == "PaperEnemy")
                 {
@@ -77,7 +77,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(collision.gameObject);
                 if (weakness == Weakness.Scissors)
                 {
-                    Invoke("DestroyThis", 0.05f);
+                    Invoke("Die", 0.05f);
                 }
                 else if (gameObject.tag == "ScissorsEnemy")
                 {
@@ -93,8 +93,9 @@ public class EnemyHealth : MonoBehaviour
     }
 
 
-    void DestroyThis()
+    void Die()
     {
+        scoreCounter.AddScore(1);
         Destroy(gameObject);
     }
 

@@ -52,7 +52,7 @@ public class Spawners : MonoBehaviour
                 for (int i = 0; i < enemiesToSpawn; i++)
                 {
                     SpawnRandomEnemy();
-                    yield return new WaitForSecondsRealtime(0.5f);
+                    yield return new WaitForSecondsRealtime(0.8f);
                 }
 
             }
