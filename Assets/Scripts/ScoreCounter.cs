@@ -7,10 +7,12 @@ public class ScoreCounter : MonoBehaviour
 {
     public int score;
     public TextMeshProUGUI scoreText;
+    HighScoreCounter highScoreCounter;
 
     private void Awake()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
+        highScoreCounter = FindObjectOfType<HighScoreCounter>();
     }
 
     private void Start()
@@ -23,5 +25,9 @@ public class ScoreCounter : MonoBehaviour
         score += addedScore;
         scoreText.text = "Score: "+ score;
 
+        if (score > highScoreCounter.highscore)
+        {
+            highScoreCounter.highscore = score;
+        }
     }
 }

@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
 
     public EnemyMovement movementScript;
     public ScoreCounter scoreCounter;
+    public GameManager gameManager;
+    public HighScoreCounter highScoreCounter;
 
     public float sameTypeKnockback; //knockback from hitting this with the same element (rock vs rock, etc.)
 
@@ -25,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
         rb = FindObjectOfType<Rigidbody>();
         movementScript = FindObjectOfType<EnemyMovement>();
         scoreCounter = FindObjectOfType<ScoreCounter>();
+        highScoreCounter = FindObjectOfType<HighScoreCounter>();
     }
 
     // Start is called before the first frame update
@@ -96,6 +99,8 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         scoreCounter.AddScore(1);
+        highScoreCounter.UpdateHighScoreDisplay();
+        
         Destroy(gameObject);
     }
 

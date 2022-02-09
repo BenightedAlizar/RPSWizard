@@ -8,8 +8,7 @@ public class GameManager : MonoBehaviour
     public bool playerIsAlive = true;
 
     GameObject pauseMenu;
-
-    public static int score;
+    GameObject highScoreCounter;
 
 
     private void Awake()
@@ -21,16 +20,8 @@ public class GameManager : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-
     private void Update()
     {
-
         if (Input.GetButtonDown("Menu"))
         {
             if (pauseMenu != null)

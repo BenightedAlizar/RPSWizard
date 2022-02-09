@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     HealthCounter healthCounter;
     Spawners spawnerScript;
     GameManager gameManager;
-
+    HighScoreCounter highScoreCounter;
 
     private void Awake()
     {
@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
         healthCounter = FindObjectOfType<HealthCounter>();
         spawnerScript = FindObjectOfType<Spawners>();
         gameManager = FindObjectOfType<GameManager>();
+        highScoreCounter = FindObjectOfType<HighScoreCounter>();
     }
 
 
@@ -89,6 +90,8 @@ public class PlayerHealth : MonoBehaviour
         deathPopup.SetActive(true);
         meshRenderer.enabled = false;
         gameManager.playerIsAlive = false;
+
+        highScoreCounter.UpdateHighScoreAndSave();
     }
 
 }
