@@ -19,7 +19,7 @@ public class WeaponSelectionUI : MonoBehaviour
 
     SelectedWeapon selectedWeapon;
 
-    public int selectedWeaponAsINT = 1; //messy, couldn't figure out a way to pass enums from other script.
+    public int selectedWeaponAsINT = 1; //messy, couldn't figure out an easy way to pass enums from an other script.
 
     public Color activatedColor;
     public Color inactiveColor;
@@ -67,19 +67,5 @@ public class WeaponSelectionUI : MonoBehaviour
                 break;
         }
 
-
-
-
-
-
-
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

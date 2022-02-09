@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9155267870120435790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: -5990908141163403226}
   - component: {fileID: -5996013373369193893}
   - component: {fileID: -1654465029299522972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ScissorsEnemy
-  m_TagString: Untagged
+  m_TagString: ScissorsEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4531312489742846832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4706902021334051613}
   - component: {fileID: 5949605693436629546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Scissors_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8280543045101605409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8662814409817425570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
