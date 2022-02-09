@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     GameObject pauseMenu;
     GameObject highScoreCounter;
 
+    [Header("Cursor Settings")]
+    public Texture2D cursorTexture;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+
 
     private void Awake()
     {
@@ -19,6 +24,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+    }
 
     private void Update()
     {
@@ -41,5 +50,10 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+
+
+
+
 
 }
