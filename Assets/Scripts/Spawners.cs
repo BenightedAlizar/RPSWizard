@@ -36,7 +36,7 @@ public class Spawners : MonoBehaviour
         while (gameManager.playerIsAlive)
         {
 
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSeconds(1);
 
             NullCheck(); //Check for null spots on list
 
@@ -59,7 +59,7 @@ public class Spawners : MonoBehaviour
                 }
 
                 //Delay before next wave!
-                yield return new WaitForSecondsRealtime(1);
+                yield return new WaitForSeconds(1);
                 newWaveBanner.SetActive(false);
 
                 int enemiesToSpawn = currentWave * 2;
@@ -70,7 +70,7 @@ public class Spawners : MonoBehaviour
                         break;
                     }
                     SpawnRandomEnemy();
-                    yield return new WaitForSecondsRealtime(0.8f);
+                    yield return new WaitForSeconds(0.8f);
                 }
 
             }

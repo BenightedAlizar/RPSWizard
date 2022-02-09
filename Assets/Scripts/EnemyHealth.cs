@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     Rigidbody rb;
 
+    private bool dead;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -5) //fell off the arena!
+        if (transform.position.y < -5 && movementScript.alive) //fell off the arena!
         {
             movementScript.alive = false;
             Die();
@@ -91,7 +92,6 @@ public class EnemyHealth : MonoBehaviour
         }
 
     }
-
 
     void Die()
     {

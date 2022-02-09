@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
 
     public ChosenSpell chosenSpell;
+    public float attackSpawnDistance; //How far away the attack spell spawns from the player
 
 
     private void Awake()
@@ -44,20 +45,20 @@ public class PlayerAttack : MonoBehaviour
         }
 
 
-        if (Input.GetButton("Fire1") && cooldownTimer <= 0 && gameManager.playerIsAlive)
+        if (Input.GetButtonDown("Fire1") && cooldownTimer <= 0 && gameManager.playerIsAlive)
         {
             cooldownTimer = attackCooldown;
 
             switch (chosenSpell)
             {
                 case ChosenSpell.Rock:
-                    Instantiate(rockAttack, transform.position + transform.forward * 2, transform.rotation);
+                    Instantiate(rockAttack, transform.position + transform.forward * attackSpawnDistance, transform.rotation);
                     break;
                 case ChosenSpell.Paper:
-                    Instantiate(paperAttack, transform.position + transform.forward * 2, transform.rotation);
+                    Instantiate(paperAttack, transform.position + transform.forward * attackSpawnDistance, transform.rotation);
                     break;
                 case ChosenSpell.Scissors:
-                    Instantiate(scissorsAttack, transform.position + transform.forward * 2, transform.rotation);
+                    Instantiate(scissorsAttack, transform.position + transform.forward * attackSpawnDistance, transform.rotation);
                     break;
                 default:
                     break;

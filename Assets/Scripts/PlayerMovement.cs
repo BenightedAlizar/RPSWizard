@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float maximumSpeed;
 
     GameManager gameManager;
+    private bool falling;
+    public float fallSpeed;
 
 
     private void Awake()
@@ -31,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Groundcheck();
+
+
         if (gameManager.playerIsAlive)
         {
             if (rb.velocity.magnitude > maximumSpeed)
@@ -52,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
             rb.AddRelativeForce(Vector3.forward * movementY * movementSpeed);
             rb.AddRelativeForce(Vector3.right * movementX * movementSpeed);
         }
+        if (falling)
+        {
+            rb.AddRelativeForce(Vector3.down * fallSpeed);
+        }
     }
 
     void FaceTheCursor()
@@ -70,6 +79,20 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, rotation, 0);
         }
 
+    }
+
+    void Groundcheck()
+    {
+        Vector3 groundCheck = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+
+        if (!Physics.Linecast(transform.position, groundCheck))
+        {
+            falling = true;
+        }
+        else
+        {
+            falling = false;
+        }
     }
 
 

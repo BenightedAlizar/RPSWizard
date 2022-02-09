@@ -58,6 +58,15 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        if (transform.position.y < -5)
+        {
+            Die();
+        }
+    }
+
+
     void TakeDamage()
     {
 
@@ -67,16 +76,19 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (alive)
         {
-            health = 0;
-            alive = false;
-            deathPopup.SetActive(true);
-            meshRenderer.enabled = false;
-            gameManager.playerIsAlive = false;
+            Die();
         }
 
         healthCounter.UpdateHealth(health);
-        
     }
 
+    void Die()
+    {
+        alive = false;
+        health = 0;
+        deathPopup.SetActive(true);
+        meshRenderer.enabled = false;
+        gameManager.playerIsAlive = false;
+    }
 
 }

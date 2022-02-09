@@ -13,7 +13,6 @@ public class EnemyMovement : MonoBehaviour
 
     public bool alive = true;
     public bool falling;
-    public static bool playerAlive = true;
 
     private void Awake()
     {
@@ -22,22 +21,10 @@ public class EnemyMovement : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    private void Start()
-    {
-        
-    }
-
-
 
     void Update()
     {
-        if (playerAlive == true && gameManager.playerIsAlive == false)
-        {
-            playerAlive = false;
-        }
-
-
-        if (alive && playerAlive && !falling)
+        if (alive && gameManager.playerIsAlive && !falling)
         {
             Vector3 lookPosition = player.position - transform.position;
             Quaternion lookRotation = Quaternion.LookRotation(lookPosition, Vector3.up);
@@ -61,13 +48,9 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
-
-
-
-
     private void FixedUpdate()
     {
-        if (alive && !falling && playerAlive)
+        if (alive && !falling && gameManager.playerIsAlive)
         {
             rb.AddRelativeForce(Vector3.forward * movementSpeed);
         }
