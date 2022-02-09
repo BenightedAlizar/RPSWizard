@@ -70,7 +70,7 @@ public class Spawners : MonoBehaviour
                         break;
                     }
                     SpawnRandomEnemy();
-                    yield return new WaitForSeconds(0.8f);
+                    yield return new WaitForSeconds(0.5f);
                 }
 
             }

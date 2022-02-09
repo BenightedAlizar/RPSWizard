@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
     public float attackCooldown;
     private float cooldownTimer;
 
+    public WeaponSelectionUI weaponSelectionUI;
+
 
     public enum ChosenSpell
     {
@@ -27,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        weaponSelectionUI = FindObjectOfType<WeaponSelectionUI>();
     }
 
 
@@ -34,6 +37,9 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         chosenSpell = ChosenSpell.Rock;
+        weaponSelectionUI.selectedWeaponAsINT = 1;
+        weaponSelectionUI.UpdateWeaponIcon();
+
     }
 
     // Update is called once per frame
@@ -70,13 +76,19 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Rock"))
         {
             chosenSpell = ChosenSpell.Rock;
+            weaponSelectionUI.selectedWeaponAsINT = 1;
+            weaponSelectionUI.UpdateWeaponIcon();
         }
         else if (Input.GetButtonDown("Paper"))
         {
             chosenSpell = ChosenSpell.Paper;
+            weaponSelectionUI.selectedWeaponAsINT = 2;
+            weaponSelectionUI.UpdateWeaponIcon();
         }
         else if (Input.GetButtonDown("Scissors"))
         {
+            weaponSelectionUI.selectedWeaponAsINT = 3;
+            weaponSelectionUI.UpdateWeaponIcon();
             chosenSpell = ChosenSpell.Scissors;
         }
 
