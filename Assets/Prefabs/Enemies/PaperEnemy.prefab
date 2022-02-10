@@ -310,7 +310,7 @@ MonoBehaviour:
   scoreCounter: {fileID: 0}
   gameManager: {fileID: 0}
   highScoreCounter: {fileID: 0}
-  sameTypeKnockback: 4000
+  sameTypeKnockback: 2000
 --- !u!111 &7990549372509555070
 Animation:
   m_ObjectHideFlags: 0

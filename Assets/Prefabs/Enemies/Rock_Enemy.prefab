@@ -98,7 +98,7 @@ MonoBehaviour:
   scoreCounter: {fileID: 0}
   gameManager: {fileID: 0}
   highScoreCounter: {fileID: 0}
-  sameTypeKnockback: 3000
+  sameTypeKnockback: 1700
 --- !u!1001 &4702267101310623803
 PrefabInstance:
   m_ObjectHideFlags: 0
