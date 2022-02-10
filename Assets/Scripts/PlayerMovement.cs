@@ -54,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (gameManager.playerIsAlive)
         {
-            rb.AddRelativeForce(Vector3.forward * movementY * movementSpeed);
-            rb.AddRelativeForce(Vector3.right * movementX * movementSpeed);
+            rb.AddForce(Vector3.forward * movementY * movementSpeed);
+            rb.AddForce(Vector3.right * movementX * movementSpeed);
         }
         if (falling)
         {
