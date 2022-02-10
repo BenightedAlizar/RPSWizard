@@ -62,7 +62,7 @@ public class Spawners : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 newWaveBanner.SetActive(false);
 
-                int enemiesToSpawn = currentWave * 2;
+                int enemiesToSpawn = currentWave * 4;
                 for (int i = 0; i < enemiesToSpawn; i++)
                 {
                     if (gameManager.playerIsAlive == false)
