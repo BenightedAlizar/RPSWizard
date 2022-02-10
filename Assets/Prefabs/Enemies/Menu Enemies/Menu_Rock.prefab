@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1855351564763352105
+--- !u!1 &7155423134385163209
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,103 +8,35 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1374943366806639853}
-  - component: {fileID: 4702267100860844532}
-  - component: {fileID: 4702267100860844531}
-  - component: {fileID: 4702267100860844529}
-  - component: {fileID: 4702267100860844530}
+  - component: {fileID: 7630897342568633101}
   m_Layer: 8
-  m_Name: Rock_Enemy
+  m_Name: Menu_Rock
   m_TagString: RockEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1374943366806639853
+--- !u!4 &7630897342568633101
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855351564763352105}
+  m_GameObject: {fileID: 7155423134385163209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 463429362981752916}
+  - {fileID: 8979277750306068404}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4702267100860844532
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855351564763352105}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!135 &4702267100860844531
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855351564763352105}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5653657
-  m_Center: {x: 0, y: 0.5448305, z: -0.022150755}
---- !u!114 &4702267100860844529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855351564763352105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53af0908095f5ad4b9a6b0797a83d586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 23
-  turnSpeed: 15
-  player: {fileID: 0}
-  alive: 1
-  falling: 0
---- !u!114 &4702267100860844530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855351564763352105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2febe8e29b73d74096b7aa9cb355701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weakness: 1
-  movementScript: {fileID: 0}
-  scoreCounter: {fileID: 0}
-  gameManager: {fileID: 0}
-  highScoreCounter: {fileID: 0}
-  sameTypeKnockback: 1700
---- !u!1001 &4702267101310623803
+--- !u!1001 &4301900838557493211
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1374943366806639853}
+    m_TransformParent: {fileID: 7630897342568633101}
     m_Modifications:
     - target: {fileID: 5129496136345940079, guid: 51b7a6ae99ae4d940b4be36fcf5c8bf6, type: 3}
       propertyPath: m_RootOrder
@@ -154,12 +86,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockEnemyModel
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 452414496980454089, guid: 51b7a6ae99ae4d940b4be36fcf5c8bf6, type: 3}
-    - {fileID: 3773186793186277398, guid: 51b7a6ae99ae4d940b4be36fcf5c8bf6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51b7a6ae99ae4d940b4be36fcf5c8bf6, type: 3}
---- !u!4 &463429362981752916 stripped
+--- !u!4 &8979277750306068404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5129496136345940079, guid: 51b7a6ae99ae4d940b4be36fcf5c8bf6, type: 3}
-  m_PrefabInstance: {fileID: 4702267101310623803}
+  m_PrefabInstance: {fileID: 4301900838557493211}
   m_PrefabAsset: {fileID: 0}

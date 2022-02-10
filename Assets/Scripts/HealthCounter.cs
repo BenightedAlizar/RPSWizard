@@ -1,20 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class HealthCounter : MonoBehaviour
 {
 
-    TextMeshProUGUI healthText;
+
+
+    public List<GameObject> hearts;
+
+    public int health;
+
+
+    PlayerHealth playerHealth;
+
 
     private void Awake()
     {
-        healthText = GetComponent<TextMeshProUGUI>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
-    public void UpdateHealth(int health)
+
+    private void Start()
     {
-        healthText.text = "Health: " + health;
+        health = playerHealth.health;
     }
+
+    public void UpdateHealth()
+    {
+        health = playerHealth.health;
+
+        foreach (GameObject item in hearts)
+        {
+            item.gameObject.SetActive(false);
+        }
+        for (int i = 0; i < health; i++)
+        {
+            hearts[i].SetActive(true);
+        }
+
+    }
+
+
 }

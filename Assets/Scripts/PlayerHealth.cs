@@ -80,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
 
-        healthCounter.UpdateHealth(health);
+        healthCounter.UpdateHealth();
     }
 
     void Die()
