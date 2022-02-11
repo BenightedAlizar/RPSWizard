@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform player;
     GameManager gameManager;
+    Spawners spawnerScript;
 
     public bool alive = true;
     public bool falling;
@@ -19,8 +20,19 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerMovement>().transform;
         gameManager = FindObjectOfType<GameManager>();
+        spawnerScript = FindObjectOfType<Spawners>();
     }
 
+
+    private void Start()
+    {
+        if (spawnerScript.currentWave > 1)
+        {
+            movementSpeed += (spawnerScript.currentWave *2);
+        }
+
+
+    }
 
     void Update()
     {

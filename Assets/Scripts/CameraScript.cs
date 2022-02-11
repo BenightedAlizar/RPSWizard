@@ -20,7 +20,7 @@ public class CameraScript : MonoBehaviour
         float interpolation = followSpeed * Time.deltaTime;
 
         Vector3 position = this.transform.position;
-        position.y = Mathf.Lerp(this.transform.position.y, player.transform.position.y, interpolation);
+        position.z = Mathf.Lerp(this.transform.position.z, player.transform.position.z, interpolation);
         position.x = Mathf.Lerp(this.transform.position.x, player.transform.position.x, interpolation);
         this.transform.position = position;
 

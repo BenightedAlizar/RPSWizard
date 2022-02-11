@@ -25,4 +25,13 @@ public class PlayerProjectile : MonoBehaviour
     {
         rb.AddRelativeForce(Vector3.forward * speed);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Arena")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
