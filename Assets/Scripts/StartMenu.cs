@@ -7,15 +7,27 @@ public class StartMenu : MonoBehaviour
 {
     public GameObject instructionsMenu;
 
+    public AudioSource audioSource;
+
+
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void StartGame()
     {
+        audioSource.PlayOneShot(audioSource.clip);
         SceneManager.LoadScene("MainScene");
     }
 
 
+
+
     public void OpenInstructions()
     {
+        audioSource.PlayOneShot(audioSource.clip);
         instructionsMenu.SetActive(true);
     }
 

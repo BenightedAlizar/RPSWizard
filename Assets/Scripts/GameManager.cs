@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
+    public bool paused;
 
     private void Awake()
     {
@@ -39,12 +40,14 @@ public class GameManager : MonoBehaviour
                 {
                     pauseMenu.gameObject.SetActive(false);
                     Time.timeScale = 1;
+                    paused = false;
 
                 }
                 else
                 {
                     pauseMenu.gameObject.SetActive(true);
                     Time.timeScale = 0;
+                    paused = true;
                 }
             }
 

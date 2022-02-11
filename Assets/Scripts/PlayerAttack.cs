@@ -15,8 +15,9 @@ public class PlayerAttack : MonoBehaviour
 
     public WeaponSelectionUI weaponSelectionUI;
 
-    AudioSource attackSoundPlayer;
+    AudioSource audioSource;
     public AudioClip pewpew;
+    public AudioClip spellSwitch;
 
 
     public enum ChosenSpell
@@ -33,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         weaponSelectionUI = FindObjectOfType<WeaponSelectionUI>();
-        attackSoundPlayer = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -58,10 +59,10 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Fire1") && cooldownTimer <= 0 && gameManager.playerIsAlive)
+        if (Input.GetButtonDown("Fire1") && cooldownTimer <= 0 && gameManager.playerIsAlive && gameManager.paused == false)
         {
             cooldownTimer = attackCooldown;
-            attackSoundPlayer.PlayOneShot(pewpew);
+            audioSource.PlayOneShot(pewpew);
 
             switch (chosenSpell)
             {
@@ -83,18 +84,22 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetButtonDown("Rock"))
         {
+            audioSource.PlayOneShot(spellSwitch);
             chosenSpell = ChosenSpell.Rock;
             weaponSelectionUI.selectedWeaponAsINT = 1;
             weaponSelectionUI.UpdateWeaponIcon();
+            
         }
         else if (Input.GetButtonDown("Paper"))
         {
+            audioSource.PlayOneShot(spellSwitch);
             chosenSpell = ChosenSpell.Paper;
             weaponSelectionUI.selectedWeaponAsINT = 2;
             weaponSelectionUI.UpdateWeaponIcon();
         }
         else if (Input.GetButtonDown("Scissors"))
         {
+            audioSource.PlayOneShot(spellSwitch);
             weaponSelectionUI.selectedWeaponAsINT = 3;
             weaponSelectionUI.UpdateWeaponIcon();
             chosenSpell = ChosenSpell.Scissors;

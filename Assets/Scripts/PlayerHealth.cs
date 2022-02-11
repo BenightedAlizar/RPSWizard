@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip deathSound;
+    public AudioClip hurtSound;
 
 
     private void Awake()
@@ -81,6 +82,7 @@ public class PlayerHealth : MonoBehaviour
         if (health > 1)
         {
             health--;
+            audioSource.PlayOneShot(hurtSound);
         }
         else if (alive)
         {
