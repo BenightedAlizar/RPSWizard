@@ -16,6 +16,9 @@ public class EnemyHealth : MonoBehaviour
     public GameManager gameManager;
     public HighScoreCounter highScoreCounter;
 
+    AudioSource audioSource;
+
+
     public float sameTypeKnockback; //knockback from hitting this with the same element (rock vs rock, etc.)
 
     Rigidbody rb;
@@ -28,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
         movementScript = FindObjectOfType<EnemyMovement>();
         scoreCounter = FindObjectOfType<ScoreCounter>();
         highScoreCounter = FindObjectOfType<HighScoreCounter>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -55,6 +59,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(collision.gameObject);
                 if (weakness == Weakness.Rock)
                 {
+                    audioSource.PlayOneShot(audioSource.clip);
                     Invoke("Die", 0.05f);
                 }
                 else if (gameObject.tag == "RockEnemy")
@@ -68,6 +73,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(collision.gameObject);
                 if (weakness == Weakness.Paper)
                 {
+                    audioSource.PlayOneShot(audioSource.clip);
                     Invoke("Die", 0.05f);
                 }
                 else if (gameObject.tag == "PaperEnemy")
@@ -81,6 +87,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(collision.gameObject);
                 if (weakness == Weakness.Scissors)
                 {
+                    audioSource.PlayOneShot(audioSource.clip);
                     Invoke("Die", 0.05f);
                 }
                 else if (gameObject.tag == "ScissorsEnemy")

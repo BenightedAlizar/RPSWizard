@@ -15,6 +15,9 @@ public class PlayerAttack : MonoBehaviour
 
     public WeaponSelectionUI weaponSelectionUI;
 
+    AudioSource attackSoundPlayer;
+    public AudioClip pewpew;
+
 
     public enum ChosenSpell
     {
@@ -30,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         weaponSelectionUI = FindObjectOfType<WeaponSelectionUI>();
+        attackSoundPlayer = GetComponent<AudioSource>();
     }
 
 
@@ -57,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && cooldownTimer <= 0 && gameManager.playerIsAlive)
         {
             cooldownTimer = attackCooldown;
+            attackSoundPlayer.PlayOneShot(pewpew);
 
             switch (chosenSpell)
             {

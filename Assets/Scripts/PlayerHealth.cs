@@ -21,6 +21,9 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject veleho;
 
+    AudioSource audioSource;
+    public AudioClip deathSound;
+
 
     private void Awake()
     {
@@ -31,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         spawnerScript = FindObjectOfType<Spawners>();
         gameManager = FindObjectOfType<GameManager>();
         highScoreCounter = FindObjectOfType<HighScoreCounter>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -88,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        audioSource.PlayOneShot(deathSound);
         alive = false;
         health = 0;
         deathPopup.SetActive(true);
