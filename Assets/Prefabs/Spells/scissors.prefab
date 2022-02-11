@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7463571321748765650}
   - component: {fileID: 4645209969693576984}
   - component: {fileID: -5856500182043448496}
-  - component: {fileID: 4589748674525226064}
   - component: {fileID: 8223359658869478658}
+  - component: {fileID: 189436493796722485}
   m_Layer: 7
   m_Name: scissors
   m_TagString: ScissorsAttack
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6590989102552706765}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,19 +100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!135 &4589748674525226064
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6590989102552706765}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5996548
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8223359658869478658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +113,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!64 &189436493796722485
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590989102552706765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6022080068499646928, guid: ef3f9e9cba026184eb9ddc2eb300ec12, type: 3}

@@ -16,11 +16,16 @@ public class PlayerMovement : MonoBehaviour
     private bool falling;
     public float fallSpeed;
 
+    public GameObject wizard;
+
+    Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         gameManager = FindObjectOfType<GameManager>();
+
+        animator = wizard.GetComponent<Animator>();
     }
 
 
@@ -47,6 +52,18 @@ public class PlayerMovement : MonoBehaviour
             movementY = Input.GetAxis("Vertical");
             movementX = Input.GetAxis("Horizontal");
         }
+
+
+        if (movementY != 0 || movementX != 0)
+        {
+            animator.SetBool("moving", true);
+        }
+        else
+        {
+            animator.SetBool("moving", false);
+        }
+
+
 
     }
 

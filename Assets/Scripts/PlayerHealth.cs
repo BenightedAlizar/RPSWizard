@@ -13,17 +13,20 @@ public class PlayerHealth : MonoBehaviour
     PlayerMovement movementScript;
     public GameObject deathPopup;
 
-    MeshRenderer meshRenderer;
+    SkinnedMeshRenderer meshRenderer;
     HealthCounter healthCounter;
     Spawners spawnerScript;
     GameManager gameManager;
     HighScoreCounter highScoreCounter;
 
+    public GameObject veleho;
+
+
     private void Awake()
     {
         attackScript = GetComponent<PlayerAttack>();
         movementScript = GetComponent<PlayerMovement>();
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = veleho.GetComponent<SkinnedMeshRenderer>();
         healthCounter = FindObjectOfType<HealthCounter>();
         spawnerScript = FindObjectOfType<Spawners>();
         gameManager = FindObjectOfType<GameManager>();

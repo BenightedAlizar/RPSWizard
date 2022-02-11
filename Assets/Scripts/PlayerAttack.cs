@@ -39,7 +39,6 @@ public class PlayerAttack : MonoBehaviour
         chosenSpell = ChosenSpell.Rock;
         weaponSelectionUI.selectedWeaponAsINT = 1;
         weaponSelectionUI.UpdateWeaponIcon();
-
     }
 
     // Update is called once per frame
@@ -51,6 +50,10 @@ public class PlayerAttack : MonoBehaviour
         }
 
 
+
+
+
+
         if (Input.GetButtonDown("Fire1") && cooldownTimer <= 0 && gameManager.playerIsAlive)
         {
             cooldownTimer = attackCooldown;
@@ -58,13 +61,13 @@ public class PlayerAttack : MonoBehaviour
             switch (chosenSpell)
             {
                 case ChosenSpell.Rock:
-                    Instantiate(rockAttack, transform.position + transform.forward * attackSpawnDistance, transform.rotation);
+                    Instantiate(rockAttack, transform.position + (transform.forward * attackSpawnDistance), transform.rotation);
                     break;
                 case ChosenSpell.Paper:
-                    Instantiate(paperAttack, transform.position + transform.forward * attackSpawnDistance, transform.rotation);
+                    Instantiate(paperAttack, transform.position + (transform.forward * attackSpawnDistance), transform.rotation);
                     break;
                 case ChosenSpell.Scissors:
-                    Instantiate(scissorsAttack, transform.position + transform.forward * attackSpawnDistance, transform.rotation);
+                    Instantiate(scissorsAttack, transform.position + (transform.forward * attackSpawnDistance), transform.rotation);
                     break;
                 default:
                     break;
